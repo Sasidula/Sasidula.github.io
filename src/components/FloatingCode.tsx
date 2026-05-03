@@ -1,0 +1,32 @@
+const snippets = [
+    `const dev = {\n  stack: 'full',\n  art: true\n};`,
+    `function render() {\n  return <Art/>;\n}`,
+    `git commit -m\n"ship it 🚀"`,
+    `npm run\n  dream`,
+    `if (gpu.ready) {\n  frag.glow();\n}`,
+    `await build(\n  'pixel.shader'\n);`,
+    `<Particle\n  glow="neon"\n/>`,
+    `for (let i=0;\n i<frames; i++)`,
+];
+
+export function FloatingCode() {
+    return (
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+            {snippets.map((s, i) => (
+                <pre
+                    key={i}
+                    className="absolute font-mono text-[11px] leading-tight text-neon/30 animate-float-slow"
+                    style={{
+                        top: `${(i * 13 + 8) % 90}%`,
+                        left: `${(i * 17 + 5) % 92}%`,
+                        animationDelay: `${i * 0.7}s`,
+                        animationDuration: `${8 + (i % 4)}s`,
+                        textShadow: "0 0 8px oklch(0.78 0.23 235 / 0.5)",
+                    }}
+                >
+          {s}
+        </pre>
+            ))}
+        </div>
+    );
+}
