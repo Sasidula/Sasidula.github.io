@@ -1,9 +1,21 @@
 import { NeonFlower } from "../NeonFlower";
 
 const stack = [
-    "TypeScript", "React", "Next.js", "Node.js", "Bun",
-    "PostgreSQL", "Redis", "Docker", "AWS", "tRPC",
-    "Tailwind", "Three.js", "Rust", "Go", "GraphQL",
+  "TypeScript",
+  "React",
+  "Redux",
+  "Spring Boot",
+  "Express.js",
+  "Node.js",
+  "MySQL",
+  "MongoDB",
+  "Redis",
+  "RabbitMQ",
+  "Kafka",
+  "Expo",
+  "Unity",
+  "Blender",
+  "Docker",
 ];
 
 export function About() {
@@ -21,22 +33,29 @@ export function About() {
                             // 01 — about
                         </div>
                         <h2 className="font-display text-4xl font-bold leading-tight sm:text-5xl">
-                            Engineer by day,
-                            <br />
-                            <span className="gradient-text">artist by night.</span>
+                          Building scalable systems,
+                          <span className="gradient-text">exploring creative tech.</span>
                         </h2>
-                        <div className="mt-6 space-y-4 text-muted-foreground">
-                            <p>
-                                I'm a full-stack developer obsessed with the seam where logic meets
-                                aesthetic. I write clean, type-safe APIs in the morning, ship
-                                React UIs at noon, and render shaders until my GPU begs for mercy.
-                            </p>
-                            <p>
-                                Off-screen, I build custom water-cooled rigs, lose weekends to
-                                competitive shooters and souls-likes, and create digital art that
-                                lives somewhere between cyberpunk and botanical.
-                            </p>
-                        </div>
+                      <div className="mt-6 space-y-4 text-muted-foreground">
+                        <p>
+                          I’m a 3rd-year Software Engineering undergraduate at NIBM, currently
+                          working as an intern while expanding my skills in modern full-stack
+                          development and distributed systems.
+                        </p>
+
+                        <p>
+                          My primary stack includes React, TypeScript, Spring Boot, Express.js,
+                          Redux, and modern backend technologies like Redis, RabbitMQ, and Kafka.
+                          I enjoy building scalable applications, experimenting with system
+                          architecture, and creating smooth interactive user experiences.
+                        </p>
+
+                        <p>
+                          Outside software engineering, I explore Unity game development,
+                          Blender, digital art, PC building, gaming culture, anime,
+                          and creative technology projects.
+                        </p>
+                      </div>
 
                         <div className="mt-8 flex flex-wrap gap-2">
                             {stack.map((s) => (
@@ -44,14 +63,14 @@ export function About() {
                                     key={s}
                                     className="rounded border border-neon/30 bg-neon/5 px-3 py-1 font-mono text-xs text-neon transition hover:bg-neon/15 hover:shadow-neon-sm"
                                 >
-                  {s}
-                </span>
+                                  {s}
+                                </span>
                             ))}
                         </div>
                     </div>
 
-                    {/* Terminal card */}
-                    <div className="relative">
+                  {/* Terminal card */}
+                  <div className="relative lg:translate-y-28">
                         <div className="absolute -inset-4 rounded-xl gradient-neon opacity-20 blur-2xl" />
                         <div className="relative rounded-xl border border-neon/30 bg-card/80 backdrop-blur-xl shadow-neon-sm">
                             <div className="flex items-center justify-between border-b border-neon/20 px-4 py-3">
@@ -61,38 +80,63 @@ export function About() {
                                     <span className="h-2.5 w-2.5 rounded-full bg-neon/70" />
                                 </div>
                                 <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                  ~/portfolio — zsh
-                </span>
+                                  ~/portfolio — zsh
+                                </span>
                                 <span />
                             </div>
                             <pre className="overflow-x-auto p-6 font-mono text-sm leading-relaxed">
-                <code>
-                  <span className="text-neon">$</span>{" "}
-                    <span className="text-foreground">whoami</span>
-                    {"\n"}
-                    <span className="text-muted-foreground">→ arc — full-stack dev / digital artist</span>
-                    {"\n\n"}
-                    <span className="text-neon">$</span>{" "}
-                    <span className="text-foreground">cat ./focus.json</span>
-                    {"\n"}
-                    <span className="text-magenta">{"{"}</span>
-                    {"\n  "}
-                    <span className="text-neon">"backend"</span>: <span className="text-foreground">"distributed systems"</span>,
-                    {"\n  "}
-                    <span className="text-neon">"frontend"</span>: <span className="text-foreground">"motion + 3D"</span>,
-                    {"\n  "}
-                    <span className="text-neon">"hobbies"</span>: [<span className="text-foreground">"pc-builds"</span>,
-                    {"\n              "}
-                    <span className="text-foreground">"gaming"</span>,
-                    {"\n              "}
-                    <span className="text-foreground">"digital-art"</span>]
-                    {"\n"}
-                    <span className="text-magenta">{"}"}</span>
-                    {"\n\n"}
-                    <span className="text-neon">$</span>{" "}
-                    <span className="animate-flicker">▊</span>
-                </code>
-              </pre>
+                              <code>
+                                <span className="text-neon">$</span>{" "}
+                                  <span className="text-foreground">whoami</span>
+                                  {"\n"}
+                                <span className="text-muted-foreground">
+                                  → sasidula_jayara — software engineer / creative developer
+                                </span>
+                                  {"\n\n"}
+                                  <span className="text-neon">$</span>{" "}
+                                  <span className="text-foreground">cat ./focus.json</span>
+                                  {"\n"}
+                                  <span className="text-magenta">{"{"}</span>
+                                  {"\n  "}
+                                  <span className="text-neon">"currently_learning"</span>: [
+                                  {"\n    "}
+                                  <span className="text-foreground">"redux"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"redis"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"rabbitmq"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"kafka"</span>
+                                  {"\n  "}],
+                                  {"\n  "}
+                                  <span className="text-neon">"interests"</span>: [
+                                  {"\n    "}
+                                  <span className="text-foreground">"full-stack"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"mobile-dev"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"game-dev"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"creative-tech"</span>
+                                  {"\n  "}],
+                                  {"\n  "}
+                                  <span className="text-neon">"hobbies"</span>: [
+                                  {"\n    "}
+                                  <span className="text-foreground">"pc-building"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"gaming"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"digital-art"</span>,
+                                  {"\n    "}
+                                  <span className="text-foreground">"anime"</span>
+                                  {"\n  "}]
+                                  {"\n"}
+                                  <span className="text-magenta">{"}"}</span>
+                                  {"\n\n"}
+                                  <span className="text-neon">$</span>{" "}
+                                  <span className="animate-flicker">▊</span>
+                              </code>
+                            </pre>
                         </div>
                     </div>
                 </div>

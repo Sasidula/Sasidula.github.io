@@ -1,31 +1,126 @@
-const projects = [
+import { ExternalLink } from "lucide-react";
+
+type Project = {
+    n: string;
+    title: string;
+    tag: string;
+    desc: string;
+    tech: string[];
+    github?: string;
+    demo?: string;
+    featured?: boolean;
+    visibility: "Personal" | "Open Source" | "University";
+};
+
+function GithubIcon({ size = 14 }: { size?: number }) {
+    return (
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        width={size}
+        height={size}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+      >
+          <title>GitHub</title>
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+      </svg>
+    );
+}
+
+const projects: Project[] = [
     {
         n: "01",
-        title: "Nebula Commerce",
-        tag: "Full-Stack · Next.js · Stripe",
-        desc: "Headless commerce platform with edge-rendered storefronts, real-time inventory, and a custom analytics pipeline.",
-        tech: ["Next.js", "tRPC", "Postgres", "Redis"],
+        title: "AquaSafe",
+        tag: "IoT • AI • React • Firebase",
+        desc: "An IoT-based river safety monitoring platform that collects real-time sensor data using NodeMCU and Firebase. The system visualizes water conditions, integrates weather data, and predicts whether a river is safe for swimming using an AI model.",
+        tech: [
+            "React",
+            "TypeScript",
+            "Firebase",
+            "Python",
+            "Flask",
+            "NodeMCU",
+            "Recharts",
+        ],
+        github: "https://github.com/Sasidula/iot-project-aquasafe",
+        featured: true,
+        visibility: "University",
     },
+
     {
         n: "02",
-        title: "Glowforge UI Kit",
-        tag: "Open Source · React · Motion",
-        desc: "A neon-themed component library with 60+ animated primitives. 4k+ stars, used in production by indie studios.",
-        tech: ["React", "TypeScript", "Framer Motion"],
+        title: "D7 Fashion MIS",
+        tag: "Laravel • PHP • MySQL",
+        desc: "A complete Management Information System for a garment manufacturing company featuring inventory management, production workflows, employee management, material assignments, authentication, and reporting dashboards.",
+        tech: [
+            "Laravel",
+            "PHP",
+            "Blade",
+            "Tailwind CSS",
+            "MySQL",
+        ],
+        featured: true,
+        visibility: "University",
     },
+
     {
         n: "03",
-        title: "Frame.gg Tournaments",
-        tag: "SaaS · Realtime · Gaming",
-        desc: "Esports bracket platform handling 10k+ concurrent matches with WebSocket sync and anti-cheat hooks.",
-        tech: ["Go", "WebSocket", "Postgres"],
+        title: "Employee Management System",
+        tag: "Spring Boot • React",
+        desc: "A full-stack employee management application with REST APIs, CRUD operations, responsive React frontend, and MySQL database integration following modern backend architecture.",
+        tech: [
+            "Spring Boot",
+            "Java",
+            "React",
+            "MySQL",
+            "REST API",
+        ],
+        github: "https://github.com/Sasidula/employee-management-system",
+        visibility: "University",
     },
+
     {
         n: "04",
-        title: "Synthwave Render Farm",
-        tag: "Personal · Distributed",
-        desc: "Self-hosted GPU render farm orchestrator. Schedules Blender + shader jobs across my home rigs over a 10G fabric.",
-        tech: ["Rust", "Docker", "GraphQL"],
+        title: "GitHub Merge Request Notifier",
+        tag: "GitHub Actions • Automation",
+        desc: "A GitHub automation workflow that sends merge request notifications using GitHub Actions and Zapier, improving developer collaboration and deployment workflows.",
+        tech: [
+            "GitHub Actions",
+            "Zapier",
+            "YAML",
+            "Automation",
+        ],
+        github: "https://github.com/Sasidula/merge-request-notifier",
+        visibility: "Open Source",
+    },
+
+    {
+        n: "05",
+        title: "Movie Streaming UI",
+        tag: "Frontend • UI/UX",
+        desc: "A Netflix-inspired streaming platform interface built to practice responsive layouts, modern UI design, reusable components, and smooth user interactions.",
+        tech: [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+        ],
+        github: "https://github.com/Sasidula/movie-streamer-site-test",
+        visibility: "Personal",
+    },
+
+    {
+        n: "06",
+        title: "Personal Blog",
+        tag: "HTML • CSS",
+        desc: "A clean responsive blog website developed during the early stages of my web development journey, focusing on semantic HTML and modern CSS layouts.",
+        tech: [
+            "HTML5",
+            "CSS3",
+            "Responsive Design",
+        ],
+        github: "https://github.com/Sasidula/Blog-Site",
+        visibility: "Personal",
     },
 ];
 
@@ -44,10 +139,12 @@ export function Projects() {
                         </h2>
                     </div>
                     <a
-                        href="#contact"
-                        className="font-mono text-xs uppercase tracking-widest text-neon hover:text-glow-soft"
+                        href="https://github.com/Sasidula"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-xs uppercase tracking-widest text-neon transition hover:text-glow-soft"
                     >
-                        More on request →
+                        View GitHub →
                     </a>
                 </div>
 
@@ -55,36 +152,74 @@ export function Projects() {
                     {projects.map((p, i) => (
                         <article
                             key={p.n}
-                            className="group relative overflow-hidden rounded-xl border border-neon/20 bg-card/60 p-8 backdrop-blur-sm transition-all duration-500 hover:border-neon/60 hover:bg-card/80 hover:shadow-neon-sm"
+                            className="group relative flex min-h-[320px] flex-col overflow-hidden rounded-xl border border-neon/20 bg-card/60 p-8 backdrop-blur-sm transition-all duration-500 hover:border-neon/60 hover:bg-card/80 hover:shadow-neon-sm"
                             style={{ animationDelay: `${i * 0.1}s` }}
                         >
                             <div
                                 className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-neon/10 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
                             />
-                            <div className="relative">
-                                <div className="mb-4 flex items-baseline justify-between">
-                                    <span className="font-mono text-xs text-neon">{p.n}</span>
-                                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    {p.tag}
-                  </span>
+                            <div className="relative flex h-full flex-col">
+                                <div className="mb-4 flex items-start justify-between gap-4">
+                                    <div>
+                                        <span className="font-mono text-xs text-neon">{p.n}</span>
+                                    </div>
+
+                                    <div className="flex items-center gap-2">
+                                        <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                                          {p.tag}
+                                        </span>
+                                        {p.featured && (
+                                          <span className="rounded-full border border-neon/40 bg-neon/10 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-neon">
+                                            Featured
+                                          </span>
+                                        )}
+                                    </div>
                                 </div>
-                                <h3 className="font-display text-2xl font-bold transition-colors group-hover:text-neon">
+                                <h3 className="font-display text-2xl font-bold transition-all duration-300 group-hover:-translate-y-1 group-hover:text-neon">
                                     {p.title}
                                 </h3>
-                                <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
+                                <p className="mt-3 line-clamp-5 text-sm text-muted-foreground">{p.desc}</p>
                                 <div className="mt-6 flex flex-wrap gap-2">
                                     {p.tech.map((t) => (
                                         <span
                                             key={t}
                                             className="rounded border border-border bg-secondary/50 px-2.5 py-1 font-mono text-[10px] text-muted-foreground"
                                         >
-                      {t}
-                    </span>
+                                          {t}
+                                        </span>
                                     ))}
                                 </div>
-                                <div className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neon opacity-0 transition group-hover:opacity-100">
-                                    Case study
-                                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                                <div className="mt-auto flex items-center justify-between pt-6">
+                                    <div className="flex gap-4">
+
+                                       {p.github && (
+                                         <a
+                                           href={p.github}
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neon transition hover:text-glow-soft"
+                                         >
+                                             <GithubIcon size={14} />
+                                             GitHub
+                                          </a>
+                                        )}
+
+                                       {p.demo && (
+                                         <a
+                                           href={p.demo}
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-neon transition hover:text-glow-soft"
+                                         >
+                                             <ExternalLink size={14} />
+                                             Live Demo
+                                          </a>
+                                        )}
+                                    </div>
+
+                                    <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                                       {p.visibility}
+                                    </span>
                                 </div>
                             </div>
                         </article>

@@ -4,20 +4,20 @@ const interests = [
     {
         icon: "▣",
         title: "PC Building",
-        desc: "Custom loops, cable-managed builds, overclocking. Currently running a 7950X3D / 4090 workstation under a custom EK loop.",
-        tags: ["Watercooling", "Overclocking", "Benchmarks"],
+        desc: "I enjoy building and customizing PCs, exploring performance optimization, cooling setups, and creating clean workstation builds for both development and gaming.",
+        tags: ["Hardware", "Performance", "Custom Builds"],
     },
     {
         icon: "◈",
         title: "Gaming",
-        desc: "FPS, soulslikes, and indie gems. Comp Valorant Diamond, Elden Ring NG+7, and a worrying Steam backlog.",
-        tags: ["FPS", "Soulslikes", "Sim Racing"],
+        desc: "Gaming has always influenced my interest in technology and interactive experiences, especially story-driven games, open-world design, and competitive multiplayer titles.",
+        tags: ["Open World", "FPS", "Game Design"],
     },
     {
         icon: "✦",
-        title: "Digital Art",
-        desc: "Procedural shaders, generative botanicals, cyberpunk concepts. Where the neon flowers in this site come from.",
-        tags: ["Shaders", "Blender", "Procedural"],
+        title: "Creative Tech",
+        desc: "I explore Blender, Unity, digital art, and experimental visuals as creative outlets that combine technology, design, and imagination.",
+        tags: ["Blender", "Unity", "Digital Art"],
     },
 ];
 
