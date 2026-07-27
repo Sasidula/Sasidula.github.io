@@ -2,6 +2,14 @@ import { NeonFlower } from "../NeonFlower";
 import { FloatingCode } from "../FloatingCode";
 import { CircuitLines } from "../CircuitLines";
 
+// Google drive view link
+// https://drive.google.com/file/d/1ZdjphQZUib_DHv6twLnyUiwPjcEKeRCH/view?usp=sharing
+
+const cvUrl =
+  "https://drive.google.com/uc?export=download&id=1ZdjphQZUib_DHv6twLnyUiwPjcEKeRCH";
+
+
+
 export function Hero() {
     return (
         <section
@@ -75,7 +83,9 @@ export function Hero() {
                         <span className="relative z-10">View Projects →</span>
                     </a>
                     <a
-                        href="#contact"
+                        href={cvUrl}
+                        download="N.A.S.Jayara_CV.pdf"
+                        rel="noopener noreferrer"
                         className="rounded-md border border-neon/50 bg-background/40 px-7 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-neon backdrop-blur transition hover:bg-neon/10 hover:shadow-neon-sm"
                     >
                       Download CV
@@ -104,7 +114,7 @@ export function Hero() {
             </div>
 
             {/* Scroll indicator */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+            <div className="absolute bottom-18 left-1/2 -translate-x-1/2">
                 <div className="flex h-10 w-6 justify-center rounded-full border border-neon/40 p-1">
                     <div className="h-2 w-1 animate-bounce rounded-full bg-neon shadow-neon-sm" />
                 </div>

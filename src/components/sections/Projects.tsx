@@ -61,7 +61,7 @@ const projects: Project[] = [
             "MySQL",
         ],
         featured: true,
-        visibility: "University",
+        visibility: "Personal",
     },
 
     {

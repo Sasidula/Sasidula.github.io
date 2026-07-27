@@ -30,15 +30,15 @@ export function Contact() {
                     href="mailto:sasidulajayara12@gmail.com"
                     className="mt-10 inline-flex items-center gap-3 rounded-md gradient-neon px-8 py-4 font-mono text-sm font-semibold uppercase tracking-widest text-primary-foreground shadow-neon transition hover:scale-105 animate-pulse-glow"
                 >
-                    hello@arc.dev
+                    sasidulajayara12@gmail.com
                     <span>→</span>
                 </a>
 
                 <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-widest">
                     {[
-                      ["GitHub", "#"],
-                      ["LinkedIn", "#"],
-                      ["Resume", "#"],
+                      ["GitHub", "https://github.com/Sasidula"],
+                      ["LinkedIn", "https://www.linkedin.com/in/sasidula-jayara-786659266/"],
+                      ["Resume", "https://drive.google.com/file/d/1ZdjphQZUib_DHv6twLnyUiwPjcEKeRCH/view?usp=sharing"],
                     ].map(([label, href]) => (
                         <a
                             key={label}

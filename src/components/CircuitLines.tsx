@@ -18,11 +18,11 @@ export function CircuitLines({ className = "" }: { className?: string }) {
                     className="animate-circuit"
                     d="M0,120 L200,120 L240,160 L500,160 L540,120 L800,120 L840,80 L1200,80"
                 />
-                <path
-                    className="animate-circuit"
-                    style={{ animationDelay: "1s" }}
-                    d="M0,400 L150,400 L190,440 L400,440 L440,400 L700,400 L740,360 L1000,360 L1040,400 L1200,400"
-                />
+                {/*<path*/}
+                {/*    className="animate-circuit"*/}
+                {/*    style={{ animationDelay: "1s" }}*/}
+                {/*    d="M0,400 L150,400 L190,440 L400,440 L440,400 L700,400 L740,360 L1000,360 L1040,400 L1200,400"*/}
+                {/*/>*/}
                 <path
                     className="animate-circuit"
                     style={{ animationDelay: "2s" }}
