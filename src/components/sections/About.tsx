@@ -23,17 +23,17 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-20 sm:py-24 lg:py-32"
+      className="relative overflow-x-hidden py-20 sm:py-24 lg:py-32"
     >
       <NeonFlower
         size={500}
-        className="absolute -right-40 top-20 hidden text-neon/10 animate-rotate-slow lg:block"
+        className="absolute -right-40 top-20 hidden animate-rotate-slow text-neon/10 lg:block"
       />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-20">
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left */}
-          <div>
+          <div className="min-w-0">
             <div className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-neon">
               // 01 — about
             </div>
@@ -82,30 +82,31 @@ export function About() {
           </div>
 
           {/* Right */}
-          <div className="relative mt-8 overflow-hidden lg:mt-0">
+          <div className="relative mt-10 min-w-0 lg:mt-0">
             {/* Glow */}
             <div className="absolute -inset-8 rounded-2xl gradient-neon opacity-20 blur-3xl" />
 
-            {/* Terminal */}
             <div
               className="
                 relative
-                w-full
-                max-w-full
 
+                w-[850px]
+                sm:w-[900px]
                 lg:w-[850px]
                 xl:w-[950px]
                 2xl:w-[1000px]
 
+                translate-x-16
+                sm:translate-x-20
                 lg:translate-x-20
                 xl:translate-x-28
 
+                translate-y-8
                 lg:translate-y-16
               "
             >
               <div
                 className="
-                  w-full
                   overflow-hidden
                   rounded-xl
                   border
@@ -116,17 +117,7 @@ export function About() {
                 "
               >
                 {/* Header */}
-                <div
-                  className="
-                    grid
-                    grid-cols-[auto_1fr_auto]
-                    items-center
-                    border-b
-                    border-neon/20
-                    px-4
-                    py-3
-                  "
-                >
+                <div className="grid grid-cols-[auto_1fr_auto] items-center border-b border-neon/20 px-4 py-3">
                   <div className="flex gap-1.5">
                     <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
                     <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
