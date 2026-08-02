@@ -104,7 +104,7 @@ export function Navbar() {
                                 className="group flex items-center justify-between py-4 font-mono text-sm uppercase tracking-widest text-muted-foreground hover:text-neon"
                             >
                                 <span className="flex items-center gap-3">
-                                  <MoonIcon size={14} className="text-neon/60 transition group-hover:text-neon group-hover:rotate-45" />
+                                  {/*<MoonIcon size={14} className="text-neon/60 transition group-hover:text-neon group-hover:rotate-45" />*/}
                                     {l.label}
                                 </span>
                                 <span className="text-neon opacity-0 -translate-x-2 transition group-hover:opacity-100 group-hover:translate-x-0">→</span>
