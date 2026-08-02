@@ -68,6 +68,7 @@ Everything up-to-date.`,color:`text-green-400`}],P=e=>new Promise(t=>setTimeout(
                 sm:w-[800px]\r
                 lg:w-[850px]\r
                 xl:w-[950px]\r
+\r
                 2xl:w-[1000px]\r
 \r
                 -translate-x-10\r
