@@ -1,73 +1,141 @@
-# React + TypeScript + Vite
+# Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website for showcasing projects, skills, GitHub activity, and development journey.
 
-Currently, two official plugins are available:
+Built with a modern React frontend and deployed on GitHub Pages, with GitHub statistics served through a private Cloudflare Worker API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Highlights
 
-## React Compiler
+- Personal developer portfolio
+- Project showcase
+- Live GitHub statistics
+- Repository analytics
+- Skills and technology overview
+- Responsive layout
+- Fast static deployment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Sections
 
-## Expanding the ESLint configuration
+The site includes:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Hero
+- About
+- Projects
+- GitHub
+- Interests
+- Contact
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## GitHub Integration
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+GitHub data is fetched from a custom Cloudflare Worker instead of calling the GitHub API directly from the browser.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+This keeps the API token private and supports:
+
+- Repository statistics
+- Star and fork counts
+- Programming language breakdown
+- Featured repositories
+- Profile information
+
+Architecture:
+
+```text
+Portfolio Frontend
+        |
+        v
+Cloudflare Worker API
+        |
+        v
+GitHub API
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Frontend
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React
+- TypeScript
+- Vite
+- React Query
+- Tailwind CSS
+
+### API
+
+- Cloudflare Workers
+- TypeScript
+- GitHub REST API
+
+### Deployment
+
+- GitHub Pages for the frontend
+- Cloudflare Workers for the GitHub stats API
+
+## Local Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Sasidula/portfolio.git
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the dev server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## Environment Variables
+
+Create a `.env` file if you want to point the frontend at a different Worker URL:
+
+```env
+VITE_GITHUB_WORKER_URL=https://your-worker.workers.dev
+```
+
+Do not commit environment files:
+
+```text
+.env
+.env.*
+```
+
+## Deployment
+
+The frontend is deployed to GitHub Pages.
+
+Build the app:
+
+```bash
+npm run build
+```
+
+Deploy the generated `dist` directory.
+
+## Project Structure
+
+```text
+src/
+├── components/
+├── pages/
+├── hooks/
+├── services/
+│   └── github.ts
+├── assets/
+└── main.tsx
+```
+
+## License
+
+MIT License
